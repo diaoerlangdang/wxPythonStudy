@@ -116,6 +116,12 @@ class TestApp(wx.Frame):
         
         panel.SetSizer(mainHBox)
 
+        #默认全选
+        self.selectAllCheckBox.Set3StateValue(wx.CHK_CHECKED)
+        self.selectListAll(True)
+        self.checkListBox.SetSelection(1) #选中某行
+        #self.checkListBox.SetSelection(-1) #取消选中
+
     #check列表 是否选中
     def onCheckListBoxSelect(self,event):
         #选中个数
