@@ -37,18 +37,18 @@ class TestApp(wx.Frame):
         leftVBox = wx.BoxSizer(wx.VERTICAL)
 
         #案例标题
-        st1 = wx.StaticText(panel,label='测试案例')
+        st1 = wx.StaticText(panel,label=u'测试案例')
         st1.SetFont(titleFont)
         leftVBox.Add(st1,flag=wx.LEFT|wx.RIGHT|wx.TOP, border = hvGap)
 
         #案例列表
-        self.checkListBox =  wx.CheckListBox(panel, choices = ['测试案例1','测试案例2','测试案例3'])
+        self.checkListBox =  wx.CheckListBox(panel, choices = [u'测试案例1',u'测试案例2',u'测试案例3'])
         self.Bind(wx.EVT_CHECKLISTBOX, self.onCheckListBoxSelect, self.checkListBox)
         leftVBox.Add(self.checkListBox, proportion=1, flag=wx.EXPAND|wx.LEFT|wx.RIGHT|wx.TOP, border = hvGap)
         leftVBox.Add((-1, 10))
 
         #全选
-        self.selectAllCheckBox = wx.CheckBox(panel, label='全选', style=wx.CHK_3STATE)
+        self.selectAllCheckBox = wx.CheckBox(panel, label=u'全选', style=wx.CHK_3STATE)
         self.selectAllCheckBox.SetFont(font)
         self.Bind(wx.EVT_CHECKBOX, self.onCheckBoxSelectAll, self.selectAllCheckBox)
         leftVBox.Add(self.selectAllCheckBox,flag=wx.EXPAND|wx.LEFT|wx.RIGHT|wx.TOP, border = hvGap)
@@ -63,13 +63,13 @@ class TestApp(wx.Frame):
         rightVBbox = wx.BoxSizer(wx.VERTICAL)
         
         '''hbox1 = wx.BoxSizer(wx.HORIZONTAL)
-        st1 = wx.StaticText(panel,label='测试文件')
+        st1 = wx.StaticText(panel,label=u'测试文件')
         st1.SetFont(font)
         
         hbox1.Add(st1,flag=wx.RIGHT,border=8)
         tc = wx.TextCtrl(panel)
         hbox1.Add(tc,proportion=1)
-        self.selectFileBtn = wx.Button(panel, label='选择文件', size=(70, 30))
+        self.selectFileBtn = wx.Button(panel, label=u'选择文件', size=(70, 30))
         #self.Bind(wx.EVT_BUTTON, self.OnClickSelectFile, self.selectFileBtn)  #未实现
         hbox1.Add(self.selectFileBtn, flag=wx.LEFT|wx.RIGHT, border=hvGap)
         rightVBbox.Add(hbox1,flag=wx.EXPAND|wx.LEFT|wx.RIGHT|wx.TOP,border=hvGap)
@@ -77,7 +77,7 @@ class TestApp(wx.Frame):
         rightVBbox.Add((-1,hvGap))'''
 
         #日志标题
-        st2 = wx.StaticText(panel,label='日志')
+        st2 = wx.StaticText(panel,label=u'日志')
         st2.SetFont(titleFont)
         rightVBbox.Add(st2,flag=wx.LEFT|wx.RIGHT|wx.TOP, border = hvGap)
         
@@ -92,22 +92,22 @@ class TestApp(wx.Frame):
         hbox5 = wx.BoxSizer(wx.HORIZONTAL)
 
         #串口选择
-        self.ComChoice = wx.Choice(panel, choices=['串口1','串口2','串口3','串口4'], size=(100, 30))
+        self.ComChoice = wx.Choice(panel, choices=[u'串口1',u'串口2',u'串口3',u'串口4'], size=(100, 30))
         #self.Bind(wx.EVT_BUTTON, self.onClickedRefreshBtn, self.refreshBtn)
         hbox5.Add(self.ComChoice, flag=wx.LEFT|wx.BOTTOM, border=5)
 
         #刷新串口按钮
-        self.refreshBtn = wx.Button(panel, label='刷新串口', size=(70, 30))
+        self.refreshBtn = wx.Button(panel, label=u'刷新串口', size=(70, 30))
         self.Bind(wx.EVT_BUTTON, self.onClickedRefreshBtn, self.refreshBtn)
         hbox5.Add(self.refreshBtn, flag=wx.LEFT|wx.BOTTOM, border=5)
 
         #开始测试按钮
-        self.startBtn = wx.Button(panel, label='开始', size=(60, 30))
+        self.startBtn = wx.Button(panel, label=u'开始', size=(60, 30))
         self.Bind(wx.EVT_BUTTON, self.onClickedStartBtn, self.startBtn)
         hbox5.Add(self.startBtn, flag=wx.LEFT|wx.BOTTOM, border=5)
 
         #停止测试按钮
-        self.stopBtn = wx.Button(panel, label='停止', size=(60, 30))
+        self.stopBtn = wx.Button(panel, label=u'停止', size=(60, 30))
         self.Bind(wx.EVT_BUTTON, self.onClickedStopBtn, self.stopBtn)
         hbox5.Add(self.stopBtn, flag=wx.LEFT|wx.BOTTOM, border=5)
         rightVBbox.Add(hbox5, flag=wx.ALIGN_RIGHT|wx.RIGHT, border=hvGap)
@@ -167,20 +167,20 @@ class TestApp(wx.Frame):
 
     #刷新串口列表
     def onClickedRefreshBtn(self,event):
-        print('刷新串口列表')
+        print(u'刷新串口列表')
         pass
 
     #开始测试
     def onClickedStartBtn(self,event):
-        print('开始测试')
+        print(u'开始测试')
         pass
 
     #停止测试
     def onClickedStopBtn(self,event):
-        print('停止测试')
+        print(u'停止测试')
         pass
         
 if __name__ == '__main__':
     app = wx.App()
-    TestApp(None,title="测试软件")
+    TestApp(None,title=u"测试软件")
     app.MainLoop()
